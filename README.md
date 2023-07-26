@@ -2,9 +2,13 @@
 fortune-cookies
 
 DynamoDB
+
 Lambda
+
 API Gateway
+
 S3
+
 X-Ray
 
 
