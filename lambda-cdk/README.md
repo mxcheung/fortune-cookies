@@ -53,3 +53,15 @@ AmazonDynamoDBFullAccess
 
 AmazonDynamoDBReadOnlyAccess
 
+# step 5 test
+
+Response
+{
+  "statusCode": 200,
+  "headers": {
+    "Access-Control-Allow-Origin": "*"
+  },
+  "body": "\"Do not worry about money. The best things in life are free.\""
+}
+
+
