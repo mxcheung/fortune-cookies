@@ -41,3 +41,10 @@ cdk synth
 
 cdk deploy
 
+# step 4 permission
+attach 
+
+AmazonDynamoDBFullAccess
+
+AmazonDynamoDBReadOnlyAccess
+
