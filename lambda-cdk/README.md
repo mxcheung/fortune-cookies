@@ -17,6 +17,7 @@ https://github.com/mavi888/cdk-typescript-lambda/blob/main/lib/cdk-typescript-st
 https://cdkworkshop.com/30-python/30-hello-cdk/200-lambda.html
 
 
+
 # step 1 - quickstart
 
 mkdir lambda-cdk
@@ -32,6 +33,10 @@ npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @a
 replace cdk  code /lib/lambda-cdk-stack.ts
 
 replace cdk  code /lambda/main.py
+
+aws dynamodb describe-table --table-name Cookies3
+
+replace table arn
 
 # step 3 - cdk bootstrap and more
 
