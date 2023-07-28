@@ -29,3 +29,5 @@ cd dynamodb-cdk
 cdk init app --language typescript
 
 # quickstart - step 2
+
+replace cdk  code /lib/dynamodb-cdk-stack.ts
