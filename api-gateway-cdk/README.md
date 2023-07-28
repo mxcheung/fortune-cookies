@@ -15,13 +15,10 @@ npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @a
 
 # step 2 - replace cdk code
 
-replace cdk  code /lib/lambda-cdk-stack.ts
+replace cdk  code /lib/api-gateway-cdk-stack.ts
 
-replace cdk  code /lambda/main.py
 
-aws dynamodb describe-table --table-name Cookies3
 
-replace table arn
 
 # step 3 - cdk bootstrap and more
 
