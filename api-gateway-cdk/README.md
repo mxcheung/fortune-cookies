@@ -29,8 +29,9 @@ cdk synth
 cdk deploy
 
 # step 4 permission
-attach 
 
+
+ARN: arn:aws:execute-api:us-east-1:617611017005:bantcy77j3/*/*/*
 
 # step 5 test
 
