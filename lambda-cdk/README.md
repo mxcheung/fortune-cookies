@@ -26,7 +26,9 @@ cd lambda-cdk
 
 cdk init app --language typescript
 
-npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/core aws-sdk
+npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/core aws-sdk @aws-cdk/aws-iam
+
+
 
 # step 2 - replace cdk code
 
