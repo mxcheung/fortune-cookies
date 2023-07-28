@@ -2,7 +2,9 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as path from 'path';
 
+// import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class ApiGatewayCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -10,26 +12,22 @@ export class ApiGatewayCdkStack extends cdk.Stack {
 
     // The code that defines your stack goes here
 
-      // Define the existing Lambda function
-    const myLambdaFunction = lambda.Function.fromFunctionArn(
-      this,
-      'myLambdaFunction',
-      'arn:aws:lambda:us-east-1:617611017005:function:LambdaCdkStack-YourLambdaFunction3B2F78C5-OTtSEa3z2T3'
-    );
-    
-
-    // Create an API Gateway
-    const api = new apigateway.RestApi(this, 'HelloApi', {
-      restApiName: 'Hello API',
+    const myLambdaFunction = new lambda.Function(this, 'YourLambdaFunction', {
+      runtime: lambda.Runtime.PYTHON_3_9,
+      handler: 'main.lambda_handler', // Assuming the Python file is named "main.py" and the function is named "lambda_handler"
+      code: lambda.Code.fromAsset(path.join(__dirname, '/../lambda')),
+      timeout: cdk.Duration.seconds(10),
+      environment: {
+        DYNAMODB_TABLE: 'Cookies3'
+      }
     });
 
-    // Create an integration for the Lambda function
-    const lambdaIntegration = new apigateway.LambdaIntegration(myLambdaFunction);
+    // Create an API Gateway
+    
+    const api = new apigateway.LambdaRestApi(this, 'HelloApi', {
+      handler: myLambdaFunction
+    });
 
-
-    // Create a resource and associate the Lambda integration with a default method (GET)
-    const helloResource = api.root.addResource('hello');
-    helloResource.addMethod('GET', lambdaIntegration);
 
   }
 }
