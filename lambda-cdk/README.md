@@ -11,3 +11,5 @@ mkdir cdk-sample-app
 cd cdk-sample-app
 
 cdk init app --language typescript
+
+https://github.com/mavi888/cdk-typescript-lambda/blob/main/lib/cdk-typescript-stack.ts
