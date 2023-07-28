@@ -13,3 +13,6 @@ cd cdk-sample-app
 cdk init app --language typescript
 
 https://github.com/mavi888/cdk-typescript-lambda/blob/main/lib/cdk-typescript-stack.ts
+
+https://cdkworkshop.com/30-python/30-hello-cdk/200-lambda.html
+
