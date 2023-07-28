@@ -3,7 +3,7 @@ import { Construct } from 'constructs';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
 import { RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 
-export class CookiesDynamodbCdkStack extends Stack {
+export class DynamodbCdkStack extends Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
