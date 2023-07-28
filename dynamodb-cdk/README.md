@@ -35,8 +35,11 @@ npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @a
 replace cdk  code /lib/dynamodb-cdk-stack.ts
 
 #  cdk bootstrap and more - step 3
+
 cdk bootstrap
+
 cdk synth
+
 cdk deploy
 
 #  load data - step 4
