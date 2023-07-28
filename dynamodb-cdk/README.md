@@ -20,7 +20,7 @@ X-Ray
 
 [fortune-cookies](https://github.com/ACloudGuru/hands-on-aws-troubleshooting/tree/main/Building_and_Troubleshooting_a_Serverless_Web_Application)https://github.com/ACloudGuru/hands-on-aws-troubleshooting/tree/main/Building_and_Troubleshooting_a_Serverless_Web_Application
 
-# quickstart - step 1
+# step 1 - quickstart
 
 mkdir dynamodb-cdk
 
@@ -30,11 +30,11 @@ cdk init app --language typescript
 
 npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/core aws-sdk
 
-# replace cdk code - step 2
+# step 2 - replace cdk code
 
 replace cdk  code /lib/dynamodb-cdk-stack.ts
 
-#  cdk bootstrap and more - step 3
+# step 3 - cdk bootstrap and more
 
 cdk bootstrap
 
@@ -42,5 +42,5 @@ cdk synth
 
 cdk deploy
 
-#  load data - step 4
+# step 4 - load data
  aws dynamodb batch-write-item --request-items file://items.json
