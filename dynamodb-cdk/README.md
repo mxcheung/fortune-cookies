@@ -28,6 +28,16 @@ cd dynamodb-cdk
 
 cdk init app --language typescript
 
-# quickstart - step 2
+npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/core aws-sdk
+
+# replace cdk code - step 2
 
 replace cdk  code /lib/dynamodb-cdk-stack.ts
+
+#  cdk bootstrap and more - step 3
+cdk bootstrap
+cdk synth
+cdk deploy
+
+#  load data - step 4
+ aws dynamodb batch-write-item --request-items file://items.json
