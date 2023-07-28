@@ -11,7 +11,10 @@ export class LambdaCdkStack extends cdk.Stack {
     const lambdaFunction = new lambda.Function(this, 'YourLambdaFunction', {
       runtime: lambda.Runtime.PYTHON_3_9,
       handler: 'main.lambda_handler', // Assuming the Python file is named "main.py" and the function is named "lambda_handler"
-      code: lambda.Code.fromAsset(path.join(__dirname, '/../lambda'))
+      code: lambda.Code.fromAsset(path.join(__dirname, '/../lambda')),
+       environment: {
+        DYNAMODB_TABLE: 'fortunes'
+      }
     });
   }
 }
