@@ -4,7 +4,7 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as path from 'path';
-import { RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
+import { RemovalPolicy, Stack, StackProps, Duration } from 'aws-cdk-lib';
 
 export class FortunesCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -22,6 +22,7 @@ export class FortunesCdkStack extends cdk.Stack {
       runtime: lambda.Runtime.PYTHON_3_9,
       handler: 'cookies.lambda_handler', // Assuming the Python file is named "main.py" and the function is named "lambda_handler"
       code: lambda.Code.fromAsset(path.join(__dirname, '/../lambda')),
+      timeout: Duration.minutes(3),
       environment: {
         DYNAMODB_TABLE: 'fortunes'
       }
