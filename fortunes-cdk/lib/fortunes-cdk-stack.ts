@@ -29,5 +29,20 @@ export class LambdaCdkStack extends cdk.Stack {
             
     // Grant the Lambda function read/write permissions to the DynamoDB table
     table.grantReadWriteData(lambdaFunction)
+
+    
+    // Create an API Gateway
+    const api = new apigateway.RestApi(this, 'HelloApi', {
+      restApiName: 'Hello API',
+    });
+
+    // Create an integration for the Lambda function
+    const lambdaIntegration = new apigateway.LambdaIntegration(lambdaFunction);
+
+
+    // Create a resource and associate the Lambda integration with a default method (GET)
+    const helloResource = api.root.addResource('hello');
+    helloResource.addMethod('GET', lambdaIntegration);
+    
   }
 }
