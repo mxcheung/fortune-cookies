@@ -4,19 +4,20 @@ import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as path from 'path';
+import { RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib';
 
 export class FortunesCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // Reference the existing DynamoDB table
+     //define dynamodb table
+    const table = new dynamodb.Table(this, id, {
+      partitionKey: { name: "fort_id", type: dynamodb.AttributeType.NUMBER },
+      removalPolicy: RemovalPolicy.DESTROY,
+      tableName: "fortunes"
+      }
+    )
     
-    let existing_table_arn = 'arn:aws:dynamodb:us-east-1:617611017005:table/Cookies3'
- //   let table = dynamodb.Table.fromTableArn(this, "Cookies3", existing_table_arn)
-
-    let table = dynamodb.Table.fromTableName(this, "fortunes", "fortunes")
-
-
     const lambdaFunction = new lambda.Function(this, 'YourLambdaFunction', {
       runtime: lambda.Runtime.PYTHON_3_9,
       handler: 'cookies.lambda_handler', // Assuming the Python file is named "main.py" and the function is named "lambda_handler"
