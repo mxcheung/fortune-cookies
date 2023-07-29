@@ -33,9 +33,20 @@ cdk deploy
 
 ARN: arn:aws:execute-api:us-east-1:617611017005:bantcy77j3/*/*/*
 
+
 # step 5 test
 
 Response Body
 
 Hello, CDK! You have hit {}
 
+
+    const lambdaIntegration = new apigateway.LambdaIntegration(
+      lambda.Function.fromFunctionArn(
+        this,
+        `existingLambdaId${resource.path}`,
+        `arn:aws:lambda:${this.region}:${this.account}:function:${resource.methodTarget}`
+      ), {
+        proxy: resource.proxy,
+        credentialsRole: apiIamRole
+      }
