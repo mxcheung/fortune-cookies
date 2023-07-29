@@ -2,8 +2,8 @@ import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
+import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as path from 'path';
-import { table } from 'console';
 
 export class LambdaCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -15,7 +15,6 @@ export class LambdaCdkStack extends cdk.Stack {
  //   let table = dynamodb.Table.fromTableArn(this, "Cookies3", existing_table_arn)
 
     let table = dynamodb.Table.fromTableName(this, "Cookies3", "Cookies3")
-
 
 
     const lambdaFunction = new lambda.Function(this, 'YourLambdaFunction', {
