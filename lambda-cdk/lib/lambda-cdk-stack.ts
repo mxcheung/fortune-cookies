@@ -12,7 +12,10 @@ export class LambdaCdkStack extends cdk.Stack {
     // Reference the existing DynamoDB table
     
     let existing_table_arn = 'arn:aws:dynamodb:us-east-1:617611017005:table/Cookies3'
-    let table = dynamodb.Table.fromTableArn(this, "Cookies3", existing_table_arn)
+ //   let table = dynamodb.Table.fromTableArn(this, "Cookies3", existing_table_arn)
+
+    let table = dynamodb.Table.fromTableName(this, "Cookies3", "Cookies3")
+
 
 
     const lambdaFunction = new lambda.Function(this, 'YourLambdaFunction', {
