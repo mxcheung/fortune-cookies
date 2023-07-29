@@ -16,8 +16,15 @@ export class ApiGatewayCdkStack extends cdk.Stack {
       'myLambdaFunction',
       'arn:aws:lambda:us-east-1:617611017005:function:LambdaCdkStack-YourLambdaFunction3B2F78C5-OTtSEa3z2T3'
     );
-    
 
+    
+    const myLambdaFunction2 = lambda.Function.fromFunctionName(
+      this,
+        "LambdaCdkStack-YourLambdaFunction3B2F78C5-OTtSEa3z2T3x",
+        "LambdaCdkStack-YourLambdaFunction3B2F78C5-OTtSEa3z2T3x"
+    );
+
+    
     // Create an API Gateway
     const api = new apigateway.RestApi(this, 'HelloApi', {
       restApiName: 'Hello API',
