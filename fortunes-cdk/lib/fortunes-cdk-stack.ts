@@ -41,7 +41,7 @@ export class FortunesCdkStack extends cdk.Stack {
 
 
     // Create a resource and associate the Lambda integration with a default method (GET)
-    const helloResource = api.root.addResource('hello');
+    const helloResource = api.root.addResource('cookies');
     helloResource.addMethod('GET', lambdaIntegration);
     
   }
