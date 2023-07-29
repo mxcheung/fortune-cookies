@@ -32,8 +32,8 @@ export class LambdaCdkStack extends cdk.Stack {
 
     
     // Create an API Gateway
-    const api = new apigateway.RestApi(this, 'HelloApi', {
-      restApiName: 'Hello API',
+    const api = new apigateway.RestApi(this, 'CookiesApi', {
+      restApiName: 'Cookies API',
     });
 
     // Create an integration for the Lambda function
