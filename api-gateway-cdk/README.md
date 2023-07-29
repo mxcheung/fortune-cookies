@@ -1,6 +1,6 @@
 # api-gateway-cdk
 
-
+ aws apigateway get-resources --rest-api-id py1ry2cpsl
 
 
 # step 1 - quickstart
