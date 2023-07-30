@@ -6,7 +6,6 @@ import * as apigateway from 'aws-cdk-lib/aws-apigateway';
 import * as path from 'path';
 import { RemovalPolicy, Stack, StackProps, Duration } from 'aws-cdk-lib';
 
-
 export class FortunesCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -18,13 +17,7 @@ export class FortunesCdkStack extends cdk.Stack {
       tableName: "fortunes"
       }
     )
-
-    // Create an API Gateway
-    const api = new apigateway.RestApi(this, 'CookiesApi', {
-      restApiName: 'Cookies API',
-    });
     
-    // Create lambda function
     const lambdaFunction = new lambda.Function(this, 'YourLambdaFunction', {
       runtime: lambda.Runtime.PYTHON_3_9,
       handler: 'cookies.lambda_handler', // Assuming the Python file is named "main.py" and the function is named "lambda_handler"
@@ -34,12 +27,16 @@ export class FortunesCdkStack extends cdk.Stack {
         DYNAMODB_TABLE: 'fortunes'
       }
     });
-    
             
     // Grant the Lambda function read/write permissions to the DynamoDB table
     table.grantReadWriteData(lambdaFunction)
 
     
+    // Create an API Gateway
+    const api = new apigateway.RestApi(this, 'CookiesApi', {
+      restApiName: 'Cookies API',
+    });
+
     // Create an integration for the Lambda function
     const lambdaIntegration = new apigateway.LambdaIntegration(lambdaFunction);
 
@@ -47,7 +44,6 @@ export class FortunesCdkStack extends cdk.Stack {
     // Create a resource and associate the Lambda integration with a default method (GET)
     const helloResource = api.root.addResource('cookies');
     helloResource.addMethod('GET', lambdaIntegration);
-    
     
   }
 }
