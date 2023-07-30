@@ -15,18 +15,11 @@ export class DynamodbCdkStack extends cdk.Stack {
 
 
      //lookup dynamodb table
-  
-    const table = dynamodb.Table.fromTableName(
-      this,
-        "fortunes",
-        "fortunes"
-    );
+    const table = dynamodb.Table.fromTableName(  this, "fortunes",  "fortunes" );
 
 
-    const api = apigateway.RestApi.fromRestApiAttributes(this, 'ExistingApi', {
-      restApiId: 'axutublbv5',
-       rootResourceId: '12hrcht5sl'
-    });
+    const api = apigateway.RestApi.fromRestApiAttributes(this, 'ExistingApi', 
+       { restApiId: 'axutublbv5', rootResourceId: '12hrcht5sl' } );
 
 
     const lambdaFunction = new lambda.Function(this, 'YourLambdaFunctionRR', {
