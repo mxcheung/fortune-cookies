@@ -82,3 +82,5 @@ Response
 }
 
 
+
+aws apigateway get-resources --rest-api-id 7og7xceam7
