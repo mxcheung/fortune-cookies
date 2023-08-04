@@ -60,6 +60,10 @@ cdk synth
 
 cdk deploy
 
+# step 4 - create code commit repository
+
+aws codecommit create-repository --repository-name MyRepositoryName
+
 
 https://www.luminis.eu/blog/cloud-en/continuous-delivery-with-aws-cdk-pipelines/
 
