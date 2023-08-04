@@ -67,3 +67,5 @@ aws codecommit create-repository --repository-name MyRepositoryName
 
 https://www.luminis.eu/blog/cloud-en/continuous-delivery-with-aws-cdk-pipelines/
 
+git checkout -b main
+
