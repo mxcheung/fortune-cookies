@@ -43,6 +43,9 @@ cdk init app --language typescript
 
 npm install @aws-cdk/aws-dynamodb @aws-cdk/aws-lambda @aws-cdk/aws-apigateway @aws-cdk/core aws-sdk
 
+npm install @aws-cdk/aws-codebuild @aws-cdk/aws-codecommit @aws-cdk/aws-codedeploy @aws-cdk/aws-codepipeline @aws-cdk/aws-codepipeline-actions @aws-cdk/pipelines
+
+
 # step 2 - replace cdk code
 
 replace cdk  code /lib/dynamodb-cdk-stack.ts
@@ -56,4 +59,7 @@ cdk bootstrap
 cdk synth
 
 cdk deploy
+
+
+https://www.luminis.eu/blog/cloud-en/continuous-delivery-with-aws-cdk-pipelines/
 
