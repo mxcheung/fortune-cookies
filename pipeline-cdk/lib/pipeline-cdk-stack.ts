@@ -10,6 +10,10 @@ import * as codepipeline from 'aws-cdk-lib/aws-codepipeline';
 import * as codepipeline_actions from 'aws-cdk-lib/aws-codepipeline-actions';
 import * as codecommit from 'aws-cdk-lib/aws-codecommit';
 
+import * as s3 from 'aws-cdk-lib/aws-s3';
+import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as path from 'path';
+
 import { Pipeline, Artifact } from '@aws-cdk/aws-codepipeline';
 import {
     CodeCommitSourceAction,
@@ -27,6 +31,19 @@ export class PipelineCdkStack extends cdk.Stack {
     // const queue = new sqs.Queue(this, 'PipelineCdkQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
+    
+    // Create the Lambda function
+    const lambdaFunction = new lambda.Function(this, 'MyLambdaFunction', {
+      runtime: lambda.Runtime.PYTHON_3_9,
+      handler: 'cookies.lambda_handler',
+      code: lambda.Code.fromAsset(path.join(__dirname, '../lambda')), // Replace '../lambda-code' with the path to your Lambda function code
+    });
+
+
+    // Create the S3 bucket
+    const bucket = new s3.Bucket(this, 'MyS3Bucket');
+    
+    
     
     // Create the CodeCommit repository
     const codeCommitRepo = new codecommit.Repository(this, 'Repository', {

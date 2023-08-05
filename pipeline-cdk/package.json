@@ -20,13 +20,19 @@
     "typescript": "~5.1.6"
   },
   "dependencies": {
+    "@aws-cdk/aws-apigateway": "^1.204.0",
     "@aws-cdk/aws-codebuild": "^1.204.0",
     "@aws-cdk/aws-codecommit": "^1.204.0",
     "@aws-cdk/aws-codedeploy": "^1.204.0",
     "@aws-cdk/aws-codepipeline": "^1.204.0",
     "@aws-cdk/aws-codepipeline-actions": "^1.204.0",
+    "@aws-cdk/aws-dynamodb": "^1.204.0",
+    "@aws-cdk/aws-lambda": "^1.204.0",
+    "@aws-cdk/aws-s3": "^1.204.0",
+    "@aws-cdk/core": "^1.204.0",
     "@aws-cdk/pipelines": "^1.204.0",
     "aws-cdk-lib": "2.88.0",
+    "aws-sdk": "^2.1430.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
   }
