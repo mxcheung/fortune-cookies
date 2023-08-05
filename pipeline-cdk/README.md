@@ -68,6 +68,8 @@ aws codecommit create-repository --repository-name MyRepositoryName
 
 https://catalog.workshops.aws/cicdonaws/en-US/1introduction
 
+https://github.com/aws-samples/codepipeline-for-lambda-using-cdk-constructs
+
 
 https://www.luminis.eu/blog/cloud-en/continuous-delivery-with-aws-cdk-pipelines/
 
