@@ -54,11 +54,13 @@ copy items.json
 
 # step 3 - cdk bootstrap and more
 
+```
 cdk bootstrap
 
 cdk synth
 
 cdk deploy
+```
 
 # step 4 - load data
 
