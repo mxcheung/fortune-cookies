@@ -70,3 +70,9 @@ cdk deploy
 ```
  aws dynamodb batch-write-item --request-items file://items.json
 ```
+
+# step 5 - view cookies page via github pages
+
+```
+https://github.com/mxcheung/mxcheung.github.io
+```
