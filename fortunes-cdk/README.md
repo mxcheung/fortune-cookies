@@ -73,6 +73,8 @@ cdk deploy
 
 # step 5 - view cookies page via github pages
 
-```
+Static html is here
 https://github.com/mxcheung/mxcheung.github.io
+```
+https://mxcheung.github.io/
 ```
