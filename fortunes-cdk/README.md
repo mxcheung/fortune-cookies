@@ -77,8 +77,9 @@ Static html calls
    * api gateway
    * aws lambda
    * aws dynamodb
+   * 
 https://mxcheung.github.io/
 
 
-Static html is here
+Source code for Static html is here
 https://github.com/mxcheung/mxcheung.github.io
