@@ -61,4 +61,7 @@ cdk synth
 cdk deploy
 
 # step 4 - load data
+
+```
  aws dynamodb batch-write-item --request-items file://items.json
+```
