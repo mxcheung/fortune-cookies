@@ -17,8 +17,9 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 # fortunes-cdk
 
 
-
+```
  aws dynamodb batch-write-item --request-items file://items.json
+```
 
 # fortune-cookies
 fortune-cookies
