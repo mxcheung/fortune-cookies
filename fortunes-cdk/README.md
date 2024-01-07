@@ -47,6 +47,7 @@ cd /home/ec2-user/environment/fortune-cookies/fortunes-cdk
 ```
 
 ```
+cd /home/ec2-user/environment/fortune-cookies/fortunes-cdk
  aws dynamodb batch-write-item --request-items file://items.json
 ```
 
