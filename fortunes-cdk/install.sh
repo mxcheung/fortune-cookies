@@ -3,9 +3,7 @@
 
 echo "Welcome fortunes cookier"
 
-mkdir fortunes-cdk
-
-cd fortunes-cdk
+cd /home/ec2-user/environment/fortune-cookies/fortunes-cdk
 
 cdk init app --language typescript
 
