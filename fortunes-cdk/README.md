@@ -40,6 +40,14 @@ X-Ray
 # step 1 - quickstart
 
 ```
+git clone https://github.com/mxcheung/fortune-cookies.git
+cd /home/ec2-user/environment/fortune-cookies/fortunes-cdk
+. ./install.sh
+
+```
+
+
+```
 mkdir fortunes-cdk
 
 cd fortunes-cdk
