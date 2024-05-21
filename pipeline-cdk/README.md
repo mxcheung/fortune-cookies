@@ -35,6 +35,15 @@ X-Ray
 
 # step 1 - quickstart
 
+```
+git clone https://github.com/mxcheung/fortune-cookies.git
+cd /home/ec2-user/environment/fortune-cookies/pipeline-cdk
+. ./install.sh
+
+```
+
+# step 1 - quickstart
+
 mkdir pipeline-cdk
 
 cd pipeline-cdk
